@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: media-processor-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: local_password_123
+      POSTGRES_DB: media_processor
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - media-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: media-processor-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - media-network
+
+volumes:
+  pgdata:
+  redisdata:
+
+networks:
+  media-network:
+    driver: bridge

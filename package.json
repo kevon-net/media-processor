@@ -1,0 +1,14 @@
+{
+  "name": "media-processor-root",
+  "version": "1.0.0",
+  "description": "A tool for downscaling uploaded media for more efficient distribution.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "dev:api": "pnpm --filter @media/api dev",
+    "dev:worker": "pnpm --filter @media/worker dev",
+    "db:build": "pnpm --filter @media/database build",
+    "db:generate": "pnpm --filter @media/database generate",
+    "db:push": "pnpm --filter @media/database push"
+  }
+}
