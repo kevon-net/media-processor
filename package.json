@@ -15,6 +15,6 @@
     "db:studio": "pnpm --filter @media/database npx prisma studio"
   },
   "devDependencies": {
-    "prettier": "^3.6.2"
+    "prettier": "^3.8.3"
   }
 }
