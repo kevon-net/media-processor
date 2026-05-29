@@ -6,4 +6,5 @@ allowBuilds:
   '@prisma/client': true
   '@prisma/engines': true
   bcrypt: true
+  msgpackr-extract: true
   'prisma': true
