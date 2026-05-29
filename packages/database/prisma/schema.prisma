@@ -1,0 +1,53 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum JobStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+}
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  createdAt    DateTime @default(now()) @map("created_at")
+  videos       Video[]
+
+  @@map("users")
+}
+
+model Video {
+  id               String    @id @default(uuid())
+  userId           String    @map("user_id")
+  originalFileKey  String    @map("original_file_key")
+  processedFileKey String?   @map("processed_file_key")
+  status           JobStatus @default(PENDING)
+  createdAt        DateTime  @default(now()) @map("created_at")
+  updatedAt        DateTime  @updatedAt @map("updated_at")
+
+  user User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  jobs Job[]
+
+  @@map("videos")
+}
+
+model Job {
+  id          String    @id @default(uuid())
+  videoId     String    @map("video_id")
+  status      JobStatus @default(PENDING)
+  attempts    Int       @default(0)
+  startedAt   DateTime? @map("started_at")
+  completedAt DateTime? @map("completed_at")
+
+  video Video @relation(fields: [videoId], references: [id], onDelete: Cascade)
+
+  @@map("jobs")
+}
