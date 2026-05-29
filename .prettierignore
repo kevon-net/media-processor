@@ -1,0 +1,61 @@
+# --- Root & package manager artifacts ---
+node_modules
+.pnpm-store
+dist
+build
+coverage
+temp
+tmp
+.cache
+
+# --- Next.js outputs ---
+.next
+out
+.vercel
+.vercel_build_output
+**/next-env.d.ts
+
+# --- Prisma & generated code ---
+**/generated/prisma/
+generated/
+prisma/migrations/
+*.db
+
+# --- Environment & config files ---
+.env
+.env.*
+*.local
+
+# --- Logs & system files ---
+*.log
+.DS_Store
+Thumbs.db
+
+# --- Turborepo / monorepo internals ---
+.turbo
+turbo
+reports
+**/.turbo
+**/node_modules
+**/.next
+**/dist
+**/build
+
+# --- IDE / editor stuff ---
+.vscode
+.idea
+*.swp
+*.swo
+
+# --- Optional (if you use TypeScript project references or output dirs) ---
+tsconfig.tsbuildinfo
+**/*.tsbuildinfo
+
+# Workspace metadata
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# Ignore all generated JS and Map files at the root of any package
+*.js
+*.js.map
+*.d.ts

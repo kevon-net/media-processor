@@ -5,10 +5,15 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
     "dev:api": "pnpm --filter @media/api dev",
     "dev:worker": "pnpm --filter @media/worker dev",
     "db:build": "pnpm --filter @media/database build",
     "db:generate": "pnpm --filter @media/database generate",
     "db:push": "pnpm --filter @media/database push"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }
