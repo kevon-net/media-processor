@@ -12,7 +12,8 @@
     "db:build": "pnpm --filter @media/database build",
     "db:generate": "pnpm --filter @media/database generate",
     "db:push": "pnpm --filter @media/database push",
-    "db:studio": "pnpm --filter @media/database npx prisma studio"
+    "db:studio": "pnpm --filter @media/database studio",
+    "docker:compose": "docker compose up -d"
   },
   "devDependencies": {
     "prettier": "^3.8.3"
