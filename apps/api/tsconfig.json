@@ -7,9 +7,11 @@
     "rootDir": "./src",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "isolatedModules": true,
     "paths": {
       "@media/database": ["../../packages/database/dist"]
-    }
+    },
+    "types": ["jest"]
   },
   "include": ["src/**/*"]
 }
