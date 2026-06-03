@@ -9,6 +9,8 @@
     "check-format": "prettier --check .",
     "dev:api": "pnpm --filter @media/api dev",
     "dev:worker": "pnpm --filter @media/worker dev",
+    "test:api": "pnpm --filter @media/api test",
+    "test:worker": "pnpm --filter @media/worker test",
     "db:build": "pnpm --filter @media/database build",
     "db:generate": "pnpm --filter @media/database generate",
     "db:push": "pnpm --filter @media/database push",
