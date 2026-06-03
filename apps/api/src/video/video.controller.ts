@@ -60,7 +60,6 @@ export class VideoController {
   // No AuthGuard here for simpler testing via browser/EventSource,
   // but you can secure this via query parameters later.
   @Sse(':id/events')
-  @Public()
   streamVideoEvents(@Param('id') videoId: string): Observable<MessageEvent> {
     return new Observable<MessageEvent>((subscriber) => {
       const channel = `video:${videoId}:events`;
