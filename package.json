@@ -11,7 +11,8 @@
     "dev:worker": "pnpm --filter @media/worker dev",
     "db:build": "pnpm --filter @media/database build",
     "db:generate": "pnpm --filter @media/database generate",
-    "db:push": "pnpm --filter @media/database push"
+    "db:push": "pnpm --filter @media/database push",
+    "db:studio": "pnpm --filter @media/database npx prisma studio"
   },
   "devDependencies": {
     "prettier": "^3.6.2"

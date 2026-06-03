@@ -66,3 +66,6 @@ Thumbs.db
 *.js
 *.js.map
 *.d.ts
+
+# reference and example files
+*.example.txt

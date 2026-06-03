@@ -7,13 +7,16 @@
   "scripts": {
     "build": "tsc",
     "generate": "prisma generate",
-    "push": "prisma db push"
+    "push": "prisma db push",
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.11.0"
   },
   "devDependencies": {
+    "@types/node": "^20.11.0",
     "prisma": "^5.11.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
 }
